@@ -12,25 +12,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="mb-5">Home</h1>
-    <p class="mb-3">Enter an integer below to find out of it is even or odd</p>
     
-    <form action="/calculate" method="GET">
+    
+    <form action="/calculate" method="POST">
         <div class="row"> 
 
             <div class="col-1"></div>
 
             <div class="col-8">
+                <h1 class="mb-5">Home</h1>
+                <p class="mb-3">Enter an integer below to find out of it is even or odd</p>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Even or Odd</label>
                     <input type="text" class="form-control" name="number" id="number" placeholder="eg: 5"> <!--name is referenced in request.form["x"] not id...-->
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
-
-            <div class="col-3"></div>
-
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </body>
 </html>

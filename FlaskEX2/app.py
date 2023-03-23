@@ -5,14 +5,18 @@ app = Flask(__name__)
 @app.get('/')
 def index():
     return render_template('index.html')
+@app.get('/')
+def calcpage():
+    return render_template('calculator.html')
 
-@app.route('/', methods=['POST','GET'])
+@app.route('/calculate', methods=['POST'])
 def calculate():
-    if request.method == 'GET':
+    if request.method == 'POST':
         task_content = request.form['number'] 
         evenOrOdd = "doodles"
         try:
-            x = 1##(task_content%2)
+            task_content=int(task_content)
+            x = (task_content%2)
             evenOrOdd = ''
             if x == 1:
                 evenOrOdd = "your number is odd"
@@ -21,10 +25,13 @@ def calculate():
         except:
             evenOrOdd = "please enter an integer"
     
-    return redirect('calculate.html', evenOrOdd=evenOrOdd)
+        return render_template('calculate.html', evenOrOdd=evenOrOdd)
+    pass
 
 @app.route('/calculate',methods=['GET', 'POST'])
 def rethome():
+    if request.method == 'POST':
+        return redirect('/')
     return render_template('calculate.html')
 
 if __name__ == "__main__":
