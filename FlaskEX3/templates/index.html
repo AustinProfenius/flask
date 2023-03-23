@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}Clubs | Home{% endblock %}
+
+
+{% block body %}
+<form action="/registered" method="POST">
+    
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-8">
+            <div class="form-group">
+                <h1 class="mb-5">Register</h1>
+                <p>use the following form to register for a student organization</p>
+                <p>{{ errormessage }}</p>
+                <label for="exampleFormControlInput1">Name</label>
+                <input type="text" class="form-control" name="name" id="club" placeholder="Quentin Tarantino">
+              </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-8">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Organization</label>
+                <select class="form-control" name="club" id="club">
+                  <option>code9</option>
+                  <option>Charlotte Hack</option>
+                  <option>Mtn bike club</option>
+                  <option>puppies club</option>
+                  <option>hiking club</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+        </div>
+        <div class="col-3"></div>
+    </div> 
+  </form>
+
+
+{% endblock %}

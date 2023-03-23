@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}Clubs | Home{% endblock %}
+
+
+{% block body %}
+
+<h1 class="mb-5">Registered Students</h1>
+<p class="mb-3">The following students have registered for the student organizations</p>
+<!-- TODO: Feature 1 -->
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Organization</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+            {% for x,y in theList.items() %}
+        <tr>
+            <td>{{ x }}</td>
+
+            <td>{{ y }}</td>
+        </tr>
+            {% endfor %}
+            
+    
+    </tbody>
+    
+</table>
+
+{% endblock %}
